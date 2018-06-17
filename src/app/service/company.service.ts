@@ -5,7 +5,7 @@ import {BeneficialOwner, Company} from '../model/company.model';
 @Injectable()
 export class CompanyService {
   constructor(private http: HttpClient) { }
-  baseUrl: string = 'http://localhost:8080/v1/companies';
+  baseUrl: string = 'https://ancient-reef-15294.herokuapp.com/v1/companies';
 
   getCompanies() {
   /*  let fakeCompanies = [{company_id: '4ee3a8d8-ca7b-4290-a52c-dd5b6165ec11', name: 'Envisionworld Ltd.',

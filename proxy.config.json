@@ -1,6 +1,6 @@
 {
   "/api/*": {
-    "target": "http://localhost:8080/v1/companies",
+    "target": "https://ancient-reef-15294.herokuapp.com/v1/companies",
     "secure": false
   }
 }
