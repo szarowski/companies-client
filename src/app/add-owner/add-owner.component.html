@@ -1,0 +1,15 @@
+<div class="col-md-6">
+  <h2 class="text-center">Add Beneficial Owner</h2>
+  <form [formGroup]="addForm" (ngSubmit)="onSubmit()">
+
+    <div class="form-group">
+      <label for="owner_name">Beneficial Owner:</label>
+      <input formControlName="owner_name" placeholder="Beneficial Owner" name="owner_name" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.owner_name.errors }" id="owner_name">
+      <div *ngIf="submitted && f.owner_name.errors" class="invalid-feedback">
+        <div *ngIf="f.owner_name.errors.required">Company beneficial owner name is required</div>
+      </div>
+    </div>
+
+    <button class="btn btn-success">Update</button>
+  </form>
+</div>

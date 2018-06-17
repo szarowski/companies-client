@@ -1,0 +1,36 @@
+<div class="col-md-6">
+  <h2> Company Details</h2>
+  <button class="btn btn-danger" (click)="addCompany()"> Add Company</button>
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th class="hidden">Company Id</th>
+      <th>Name</th>
+      <th>Address</th>
+      <th>City</th>
+      <th>Country</th>
+      <th>Email</th>
+      <th>Phone</th>
+      <th>Beneficial Owners</th>
+      <th>Action</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let company of companys">
+      <td class="hidden">{{company.company_id}}</td>
+      <td>{{company.name}}</td>
+      <td>{{company.address}}</td>
+      <td>{{company.city}}</td>
+      <td>{{company.country}}</td>
+      <td>{{company.email}}</td>
+      <td>{{company.phone}}</td>
+      <td>{{company.beneficial_owners.join(",")}}</td>
+      <td>
+        <button class="btn btn-danger" (click)="deleteCompany(company)"> Delete</button>
+        <button class="btn btn-danger" (click)="editCompany(company)" style="margin-left: 20px;"> Edit</button>
+        <button class="btn btn-danger" (click)="addOwner(company)" style="margin-left: 20px;"> Add Owner</button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>

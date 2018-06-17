@@ -1,0 +1,57 @@
+<div class="col-md-6">
+  <h2 class="text-center">Edit Company</h2>
+  <form [formGroup]="editForm" (ngSubmit)="onSubmit()">
+
+    <div class="form-group">
+      <label for="name">Company name:</label>
+      <input type="name" formControlName="name" placeholder="Name" name="name" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.name.errors }" id="name">
+      <div *ngIf="submitted && f.name.errors" class="invalid-feedback">
+        <div *ngIf="f.name.errors.required">Company name is required</div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="address">Address:</label>
+      <input type="address" formControlName="address" placeholder="Address" name="address" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.address.errors }" id="address">
+      <div *ngIf="submitted && f.address.errors" class="invalid-feedback">
+        <div *ngIf="f.address.errors.required">Company address is required</div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="city">City:</label>
+      <input formControlName="city" placeholder="City" name="city" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.city.errors }" id="city">
+      <div *ngIf="submitted && f.city.errors" class="invalid-feedback">
+        <div *ngIf="f.city.errors.required">Company city is required</div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="country">Country:</label>
+      <input formControlName="country" placeholder="Country" name="country" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.country.errors }" id="country">
+      <div *ngIf="submitted && f.country.errors" class="invalid-feedback">
+        <div *ngIf="f.country.errors.required">Company country is required</div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="email">Email address:</label>
+      <input type="email" formControlName="email" placeholder="Email" name="email" class="form-control" id="email">
+    </div>
+
+    <div class="form-group">
+      <label for="phone">Phone number:</label>
+      <input formControlName="phone" placeholder="Phone" name="phone" class="form-control" id="phone">
+    </div>
+
+    <div class="form-group">
+      <label for="owners_string">Comma-separated Beneficial Owners:</label>
+      <input formControlName="owners_string" placeholder="Beneficial Owners" name="owners_string" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.owners_string.errors }" id="owners_string">
+      <div *ngIf="submitted && f.owners_string.errors" class="invalid-feedback">
+        <div *ngIf="f.owners_string.errors.required">Company beneficial owners are required</div>
+      </div>
+    </div>
+
+    <button class="btn btn-success">Update</button>
+  </form>
+</div>
